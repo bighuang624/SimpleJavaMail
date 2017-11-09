@@ -60,7 +60,7 @@ public class Email {
 			message.setFrom(new InternetAddress(home_address));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(target_address));
 			message.setSubject("Java test mail from Kyon Huang");
-			message.setText("This is a test mail for Java homework 4 from Kyon Huang.\nDo you like me?\nQAQ");
+			message.setText("This is a test mail for Java homework from Kyon Huang.\nDo you like me?\nQAQ");
 			Transport.send(message);
 			System.out.println("Sending to " + target_address + " succeed!");
 			
@@ -122,7 +122,7 @@ public class Email {
 		Folder folder = null;
 		
 		try{
-		    store = session.getStore("pop3");    //Store代表存储邮件的邮件服务器
+		    store = session.getStore("pop3");    //Store 代表存储邮件的邮件服务器
 		    store.connect(pop3_host, home_address, password);
 		    folder = store.getFolder("INBOX");
 		    folder.open(Folder.READ_ONLY);
@@ -171,14 +171,14 @@ public class Email {
 			for(int i = 0; i < addresses.length; i++){
 				Email.sendMultipartMail(addresses[i]);
 				try{
-				    Thread.currentThread().sleep(1000);    //暂停1秒后程序继续执行
+				    Thread.currentThread().sleep(1000);    //暂停 1 秒后程序继续执行
 				}catch (InterruptedException e) {
 				    e.printStackTrace();
 				} 
 			}
 			
 			try{
-			    Thread.currentThread().sleep(90000);    //暂停90秒后程序继续执行
+			    Thread.currentThread().sleep(90000);    //暂停 90 秒后程序继续执行
 			}catch (InterruptedException e) {
 			    e.printStackTrace();
 			} 
